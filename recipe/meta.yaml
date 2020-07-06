@@ -1,5 +1,5 @@
 {% set name = "tdameritrade" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 692baf738dc8c5f9250764ac7db101171c5df8dd59e39bae77d2a7ff41a02479
+  sha256: f6de32b2388376b9debe96c4277daa409f3e1cf9854161860d4a2ad9f8149cdf
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - tdameritrade-auth = tdameritrade.auth:main
 
@@ -37,7 +37,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Python interface to TD Ameritrade'
+  summary: Python interface to TD Ameritrade
 
   description: |
     Python interface to TD Ameritrade

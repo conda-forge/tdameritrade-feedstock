@@ -1,5 +1,5 @@
 {% set name = "tdameritrade" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6de32b2388376b9debe96c4277daa409f3e1cf9854161860d4a2ad9f8149cdf
+  sha256: 52822102291db9c40bf8eafdfec228ea9234bb0e525a0585d6d449c262491a3b
 
 build:
   number: 0

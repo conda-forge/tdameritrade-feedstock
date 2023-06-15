@@ -22,11 +22,9 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - ipython >=7.0.1
     - pandas >=0.22.0
     - requests >=2.22.0
     - selenium >=3.141.0
-    - ujson >=1.35
 
 test:
   imports:

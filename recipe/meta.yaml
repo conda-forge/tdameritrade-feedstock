@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7ef13cf4bbef50633df3d5e3f263bc6a4a301e4b2ff3397077927a9fae0c709a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -18,15 +18,18 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pandas >=0.22.0
     - requests >=2.22.0
     - selenium >=3.141.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - tdameritrade
 
